@@ -43,8 +43,8 @@ $admonitions: (
   --color-directive-error-background: rgba(255, 0, 0, 0.4);
 
   // Admonitions
-  --admonition-font-size: 0.8125rem;
-  --admonition-title-font-size: 0.8125rem;
+  --admonition-font-size: 1em;
+  --admonition-title-font-size: 1em;
   --icon-admonition-default: var(--icon-#{nth($admonition-default, 2)});
   // Note this background is transparent in furo, but we want dark text to still work for dark backgrounds
   --color-admonition-background: rgba(255, 255, 255, 0.3);
