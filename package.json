@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-docutils",
-  "version": "0.0.12",
+  "version": "0.1.1",
   "description": "A markdown-it plugin for implementing docutils style roles and directives",
   "author": "Chris Sewell",
   "homepage": "https://github.com/executablebooks/markdown-it-docutils",
@@ -20,7 +20,8 @@
   "exports": {
     ".": {
       "require": "./dist/umd/index.js",
-      "import": "./dist/mjs/index.js"
+      "import": "./dist/mjs/index.js",
+      "style": "./dist/css/style.min.css"
     }
   },
   "scripts": {
@@ -72,7 +73,7 @@
     "prettier": "^2.3.2",
     "rollup": "^2.52.3",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-typescript2": "^0.31.0",
     "sass": "^1.35.1",
     "ts-jest": "^26.4.4",
     "typescript": "^4.3.4"
