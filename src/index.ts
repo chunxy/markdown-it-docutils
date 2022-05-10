@@ -1,14 +1,19 @@
 import type MarkdownIt from "markdown-it/lib"
-import { rolesDefault, Role, rolePlugin, IRoleOptions } from "./roles"
+import { rolesDefault, Role, rolePlugin, IRoleOptions, IRoleData } from "./roles"
 import {
   directivesDefault,
   Directive,
   directivePlugin,
-  IDirectiveOptions
+  directiveOptions,
+  IDirectiveOptions,
+  IDirectiveData
 } from "./directives"
+import statePlugin from "./state/plugin"
 
 export { rolesDefault, rolePlugin, Role }
-export { directivesDefault, directivePlugin, Directive }
+export { directivesDefault, directivePlugin, Directive, directiveOptions }
+
+export type { IRoleData, IRoleOptions, IDirectiveData, IDirectiveOptions }
 
 /** Allowed options for docutils plugin */
 export interface IOptions extends IDirectiveOptions, IRoleOptions {
@@ -28,9 +33,14 @@ const OptionDefaults: IOptions = {
 /**
  * A markdown-it plugin for implementing docutils style roles and directives.
  */
-export default function docutilsPlugin(md: MarkdownIt, options?: IOptions): void {
+export function docutilsPlugin(md: MarkdownIt, options?: IOptions): void {
   const fullOptions = { ...OptionDefaults, ...options }
 
-  rolePlugin(md, fullOptions)
-  directivePlugin(md, fullOptions)
+  md.use(rolePlugin, fullOptions)
+  md.use(directivePlugin, fullOptions)
+  md.use(statePlugin, fullOptions)
 }
+
+// Note: Exporting default and the function as a named export.
+//       This helps with Jest integration in downstream packages.
+export default docutilsPlugin

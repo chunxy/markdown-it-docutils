@@ -10,66 +10,6 @@ content
 </pre></aside>
 .
 
-admonition
-.
-```{admonition} A **Title**
-Some *content*
-```
-.
-<aside class="admonition">
-<header class="admonition-title">A <strong>Title</strong></header>
-<p>Some <em>content</em></p>
-</aside>
-.
-
-nested-admonition
-.
-````{note} This is a note
-```{warning} This is a nested warning
-```
-````
-.
-<aside class="admonition note">
-<header class="admonition-title">Note</header>
-<p>This is a note</p>
-<aside class="admonition warning">
-<header class="admonition-title">Warning</header>
-<p>This is a nested warning</p>
-</aside>
-</aside>
-.
-
-image
-.
-```{image} https://via.placeholder.com/150
-```
-.
-<img src="https://via.placeholder.com/150" alt="">
-.
-
-image-options
-.
-```{image} https://via.placeholder.com/150
-:align: center
-:alt: some *alt*
-:class: other
-```
-.
-<img src="https://via.placeholder.com/150" alt="some alt" class="align-center other">
-.
-
-figure
-.
-```{figure} https://via.placeholder.com/150
-:align: center
-
-A **caption**
-```
-.
-<figure class="align-center"><img src="https://via.placeholder.com/150" alt="" class="align-center"><figcaption><p>A <strong>caption</strong></p>
-</figcaption></figure>
-.
-
 code
 .
 ```{code}
