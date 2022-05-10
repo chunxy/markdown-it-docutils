@@ -32,6 +32,8 @@ function replaceFences(state: StateCore): boolean {
     if (token.type === "fence") {
       const match = token.info.match(/^\{([^\s}]+)\}\s*(.*)$/)
       if (match) {
+        if (token.info === "mermaid")
+          continue
         token.type = "directive"
         token.info = match[1]
         token.meta = { arg: match[2] }
