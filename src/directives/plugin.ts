@@ -32,7 +32,7 @@ function replaceFences(state: StateCore): boolean {
     if (token.type === "fence") {
       const match = token.info.match(/^\{([^\s}]+)\}\s*(.*)$/)
       if (match) {
-        if (token.info === "mermaid")
+        if (match[1] == "mermaid" || match[1] == "railroad")
           continue
         token.type = "directive"
         token.info = match[1]
